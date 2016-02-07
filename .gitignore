@@ -1,0 +1,6 @@
+# Intellij
+.idea/
+remindme.server.iml
+
+# Maven
+target/
