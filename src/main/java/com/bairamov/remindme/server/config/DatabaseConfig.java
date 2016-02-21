@@ -1,7 +1,6 @@
 package com.bairamov.remindme.server.config;
 
 import org.apache.commons.dbcp2.BasicDataSource;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -21,9 +20,9 @@ import java.io.InputStream;
 import java.util.Properties;
 
 @Configuration
-@EnableJpaRepositories("com.bairamov.remindme.server.dao.repository")
+@EnableJpaRepositories("com.bairamov.remindme.server.dal.repository")
 @EnableTransactionManagement
-@ComponentScan("com.bairamov.remindme.server.dao.repository")
+@ComponentScan("com.bairamov.remindme.server.dal.repository")
 @PropertySource("classpath:db.properties")
 public class DatabaseConfig {
     @Resource
@@ -60,7 +59,7 @@ public class DatabaseConfig {
     }
 
     @Bean
-    public PlatformTransactionManager platformTransactionManager() {
+    public PlatformTransactionManager transactionManager() {
         JpaTransactionManager manager = new JpaTransactionManager();
         manager.setEntityManagerFactory(entityManagerFactory().getObject());
         return manager;

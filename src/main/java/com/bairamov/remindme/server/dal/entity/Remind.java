@@ -1,4 +1,4 @@
-package com.bairamov.remindme.server.dao.entity;
+package com.bairamov.remindme.server.dal.entity;
 
 
 import org.hibernate.annotations.GenericGenerator;
@@ -9,7 +9,6 @@ import java.util.Date;
 @Entity
 @Table(name = "remind")
 public class Remind {
-
     @Id
     @GeneratedValue(generator = "increment")
     @GenericGenerator(name = "increment", strategy = "increment")
@@ -19,6 +18,7 @@ public class Remind {
     private String title;
 
     @Column(name = "remind_date", nullable = false)
+    @Temporal(TemporalType.TIMESTAMP)
     private Date remindDate;
 
     public Remind() {
