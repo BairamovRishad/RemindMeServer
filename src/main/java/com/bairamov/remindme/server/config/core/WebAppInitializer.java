@@ -1,7 +1,9 @@
-package com.bairamov.remindme.server.config;
+package com.bairamov.remindme.server.config.core;
 
+import com.bairamov.remindme.server.config.WebConfig;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
+// Initializer class to enable the Spring MVC
 public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
     @Override
     protected Class<?>[] getRootConfigClasses() {
