@@ -30,6 +30,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .logout().logoutSuccessUrl("/login?logout").logoutRequestMatcher(new AntPathRequestMatcher("/j_spring_security_logout"))
                 .and()
+                .exceptionHandling().accessDeniedPage("/403")
+                .and()
                 .csrf();
     }
 }
