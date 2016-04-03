@@ -20,7 +20,6 @@ import java.util.List;
 @Configuration
 @EnableWebMvc
 @ComponentScan("com.bairamov.remindme.server")
-@Import({SecurityConfig.class})
 public class WebConfig extends WebMvcConfigurerAdapter {
     @Override
     public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
@@ -38,8 +37,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 
     @Bean
     public InternalResourceViewResolver viewResolver() {
-        InternalResourceViewResolver viewResolver
-                = new InternalResourceViewResolver();
+        InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
         viewResolver.setViewClass(JstlView.class);
         viewResolver.setPrefix("/WEB-INF/pages/");
         viewResolver.setSuffix(".jsp");

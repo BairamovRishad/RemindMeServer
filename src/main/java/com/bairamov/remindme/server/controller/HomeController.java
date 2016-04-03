@@ -11,11 +11,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-public class HelloController {
+public class HomeController {
     @RequestMapping(value = {"/", "/welcome**"}, method = RequestMethod.GET)
     public ModelAndView welcomePage() {
         ModelAndView model = new ModelAndView();
-        model.addObject("title", "Spring Security Hello World");
+        model.addObject("title", "RemindMe Server");
         model.addObject("message", "This is welcome page!");
         model.setViewName("hello");
         return model;
@@ -24,7 +24,7 @@ public class HelloController {
     @RequestMapping(value = "/admin**", method = RequestMethod.GET)
     public ModelAndView adminPage() {
         ModelAndView model = new ModelAndView();
-        model.addObject("title", "Spring Security Hello World");
+        model.addObject("title", "RemindMe Server");
         model.addObject("message", "This is protected page - Admin Page!");
         model.setViewName("admin");
 
@@ -50,7 +50,7 @@ public class HelloController {
         return model;
     }
 
-    //for 403 access denied page
+    // for 403 access denied page
     @RequestMapping(value = "/403", method = RequestMethod.GET)
     public ModelAndView accesssDenied() {
 
@@ -65,6 +65,5 @@ public class HelloController {
 
         model.setViewName("403");
         return model;
-
     }
 }
